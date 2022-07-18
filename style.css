@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+* { box-sizing: border-box; }
+html,body { height: 100% }
+
+:root {
+    --c-soft-blue: hsl(215, 51%, 70%);
+    --c-cyan: hsl(178, 100%, 50%);
+    --c-main: hsl(217, 54%, 11%);
+    --c-card: hsl(216, 50%, 16%);
+    --c-line: hsl(215, 32%, 27%);
+    --c-white: hsl(0, 0%, 100%);
+}
+
+body {
+    margin: 0;
+    font: 16px "Outfit";
+    display: flex;
+    flex-direction: column;
+    background: var(--c-main);
+    color: var(--c-white);
+}
+
+*:focus-visible {
+    outline-style: solid    ;
+    outline-color: var(--c-cyan);
+}
+
+img {
+    width: 100%;
+}
+
+main {
+    margin: auto;
+    width: min(400px, 100%);
+    padding: 28px;
+}
+
+.card {
+    background: var(--c-card);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 40px 0px hsla(216, 48%, 8%, 40%);
+}
+.card .image {
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    outline-offset: 2px;
+}
+.card .image:before {
+    content: '\e902';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: hsla(178, 100%, 50%, 50%);
+    color: var(--c-white);
+    font-size: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 1;
+
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.card .image:hover:before,
+.card .image:focus-visible:before {
+    opacity: 1;
+}
+.card img {
+    border-radius: 10px;
+    display: block;
+    height: 100%;
+}
+.card h1 {
+    font-size: 1.4rem;
+    margin-top: 1.3rem;
+}
+.card h1 a {
+    color: currentColor;
+    text-decoration: none;
+    transition: color .2s;
+}
+.card h1 a:hover,
+.card h1 a:focus {
+    color: var(--c-cyan);
+}
+.card p {
+    color: var(--c-soft-blue);
+}
+.card .info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+}
+.card [class^="icon-"],
+.card [class*=" icon-"] {
+    margin-right: .5rem;
+}
+.card .time {
+    color: var(--c-soft-blue);
+}
+.card .price {
+    color: var(--c-cyan);
+}
+.card .scammer {
+    display: flex;
+    align-items: center;
+    color: var(--c-soft-blue)
+}
+.card .scammer a {
+    color: var(--c-white);
+    text-decoration: none;
+    transition: color .2s;
+}
+.card .scammer a:hover,
+.card .scammer a:focus {
+    color: var(--c-cyan);
+}
+.card .scammer img {
+    width: 36px;
+    border: 2px solid var(--c-white);
+    border-radius: 100px;
+    margin-right: .7rem;
+}
+.card hr {
+    color: var(--c-line);
+    margin: 1rem 0 1rem;
+}
+
+header {
+    font-size: 16px;
+    text-align: center;
+    padding: 4px;
+    color: var(--c-grayish-blue);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    margin-top: -23px; /*just to center main*/
+    color: var(--c-grayish-blue);
+}
+.attribution a {
+    color: var(--c-dark-blue);
+    text-underline-offset: 3px;
+}
+
+
+
+
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?lz05cx');
+    src: url('fonts/icomoon.eot?lz05cx#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?lz05cx') format('truetype'),
+        url('fonts/icomoon.woff?lz05cx') format('woff'),
+        url('fonts/icomoon.svg?lz05cx#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+    content: "\e900";
+}
+
+.icon-ethereum:before {
+    content: "\e901";
+}
+
+.icon-view:before {
+    content: "\e902";
+}
